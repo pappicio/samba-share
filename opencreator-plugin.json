@@ -1,0 +1,25 @@
+{
+  "id": "samba-share",
+  "name": "Samba Share",
+  "version": "1.0.0",
+  "description": "Installs and runs an SMB share of /usr/data on the Creator 5.",
+  "author": "pappicio",
+  "startup": [
+    {
+      "name": "smbd",
+      "exec": "bin/samba-service.sh",
+      "type": "service"
+    }
+  ],
+  "scripts": {
+    "install": "bin/install.sh",
+    "update": "bin/install.sh",
+    "uninstall": "bin/uninstall.sh"
+  },
+  "requires": {
+    "models": [
+      "Creator5",
+      "Creator5Pro"
+    ]
+  }
+}
